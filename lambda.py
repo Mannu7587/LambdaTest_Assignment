@@ -1,6 +1,5 @@
 import json
 from collections import OrderedDict
-
 def merge_json_files(file_paths):
     final_json = OrderedDict()
 
@@ -8,7 +7,6 @@ def merge_json_files(file_paths):
         with open(file_path, 'r', encoding="utf8") as file:
             data = json.load(file)
 
-            # Merge attributes into final_json, deduplicating if needed
             for key, value in data.items():
                 if key not in final_json:
                     final_json[key] = value
